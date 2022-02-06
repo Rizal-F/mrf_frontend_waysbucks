@@ -1,0 +1,17 @@
+.jumbotron-text {
+    top: 60px;
+    left: 60px;
+    width: 35%;
+    font-size: 20px;
+    
+}
+
+.jumbotron-text h1 {
+    font-family: 'Arial Black';
+}
+
+.jumbotron-coffee {
+    top: 60px;
+    right: 60px;
+    width: 35%;
+}
