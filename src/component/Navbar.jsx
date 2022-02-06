@@ -21,8 +21,8 @@ function Navbar(props) {
                 <div className="space-x-5 font-['Avenir-Black'] flex items-center">
                     {props.isLogin ? 
                     <>
-                        <img className="px-3" src="/img/user/cartLogo.png" alt="" />
-                        <img className="h-14 w-14 object-cover rounded-full border-2 border-brand-red" src="/img/user/profil.png" alt="" />
+                        <Link to="/my-cart"><img className="px-3" src="/img/user/cartLogo.png" alt="" /></Link>
+                        <Link to="/profil"><img className="h-14 w-14 object-cover rounded-full border-2 border-brand-red" src="/img/user/profil.png" alt="" /></Link>
                     </> : 
                     <>
                         <button onClick={()=> setOpenLogin(!openLogin)} className="px-6 py-1 rounded-md border-2 border-brand-red text-brand-red" >Login</button>
