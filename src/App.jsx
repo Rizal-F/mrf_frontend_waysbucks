@@ -14,10 +14,11 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 
 function App() {
   const [isLogin, setIsLogin] = useState(false)
+  const [isAdmin, setIsAdmin] = useState(false)
 
   return (
     <Router>
-      <Navbar isLogin={isLogin} onClick={() => setIsLogin(!isLogin)}  />
+      <Navbar isLogin={isLogin} isAdmin={isAdmin} onClick={() => setIsLogin(!isLogin)}  />
       <Routes>
         <Route path='/' element=
         {

@@ -1,6 +1,7 @@
 import { Fragment, useRef, useState } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
+import { Dialog, Transition, Menu } from '@headlessui/react'
 import {Link} from 'react-router-dom'
+import Transactions from './Transactions'
 
 function Navbar(props) {
     
@@ -16,19 +17,100 @@ function Navbar(props) {
 
     return(
         <div>
-            <nav className="mx-20 my-10 flex justify-between items-center">
-                <Link to="/"><img src="/img/landing_page/Logo.png" alt="" /></Link>
-                <div className="space-x-5 font-['Avenir-Black'] flex items-center">
-                    {props.isLogin ? 
+            <nav className='flex justify-between items-center mx-20 my-7'>
+                <div>
+                    <Link to="/">
+                        <img src="/img/landing_page/Logo.png" alt="logo" />
+                    </Link>
+                </div>
+                <div className='space-x-4'>
+                    {props.isLogin ? (
+                    <div className='flex items-center relative'>
+                        <Link to="/my-cart" className='relative' >
+                            <img className='mx-8 w-8 cursor-pointer' src="img/user/cartLogo.png" alt="logo" />
+                            {Transactions.length > 0 ? (
+                                <div className='w-5 h-5 text-xs text-white font-bold bg-red-600 rounded-full absolute right-6 -top-1 flex justify-center items-center'>
+                                    {Transactions.length}
+                                </div>
+                            ) : null}
+                        </Link>
+                        <div>
+                            <Menu as="div" className="ml-3 relative z-10">
+                                    <div>
+                                    <Menu.Button className="max-w-xs border-brand-red border-2 bg-brand-red rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 ">
+                                        <span className="sr-only">Open user menu</span>
+                                        <img className="h-12 w-12 rounded-full" src="/img/user/profil.png" alt="" />
+                                    </Menu.Button>
+                                    </div>
+                                    <Transition
+                                    as={Fragment}
+                                    enter="transition ease-out duration-100"
+                                    enterFrom="transform opacity-0 scale-95"
+                                    enterTo="transform opacity-100 scale-100"
+                                    leave="transition ease-in duration-75"
+                                    leaveFrom="transform opacity-100 scale-100"
+                                    leaveTo="transform opacity-0 scale-95"
+                                    >
+                                    <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                        {!props.isAdmin ? (
+                                        <Menu.Item>
+                                            <div className='flex my-3'>
+                                                <img className='w-8 h-8 mx-3 mt-1' src="img/dropdown/profilIco.png" alt="" />
+                                                <Link 
+                                                    to='/profil'
+                                                    className='bg-white block px-4 py-2 text-md font-["Avenir-Black"] text-gray-700'>
+                                                    Profile
+                                                </Link>
+                                            </div>
+                                        </Menu.Item>  
+                                ):(
+                                <>
+                                    <Menu.Item>
+                                        <div className='flex my-3'>
+                                            <img className='h-8 mx-3 mt-1' src="img/addproduct.png" alt="" />
+                                            <a 
+                                                href='/add-product'
+                                                className='bg-white block px-4 py-2 text-md font-["Avenir-Black"] text-gray-700'>
+                                                Add Product
+                                            </a>
+                                        </div>
+                                    </Menu.Item>
+
+                                    <Menu.Item>
+                                        <div className='flex mt-3 my-2'>
+                                            <img className='h-8 mx-3 mt-1' src="img/addtopping.png" alt="" />
+                                            <a
+                                                href='/add-topping'
+                                                className='bg-white block px-4 py-2 font-["Avenir-Black"] text-md text-gray-700'>
+                                                Add Topping
+                                            </a>
+                                        </div>
+                                    </Menu.Item>
+                                </>
+                                )}
+                                <hr />
+                                    <Menu.Item>
+                                        <div className='flex mt-3 my-2'>
+                                            <img className='h-8 mx-3 mt-1' src="img/logout.png" alt="" />
+                                            <div
+                                                className='bg-white block px-4 py-2 font-["Avenir-Black"] text-md text-gray-700 cursor-pointer' onClick={() => toggleLoggedIn()}>
+                                                Logout
+                                            </div>
+                                        </div>
+                                    </Menu.Item>
+                                        </Menu.Items>
+                                        </Transition>
+                            </Menu>
+                        </div> 
+                    </div>
+                    ) : (
                     <>
-                        <Link to="/my-cart"><img className="px-3" src="/img/user/cartLogo.png" alt="" /></Link>
-                        <Link to="/profil"><img className="h-14 w-14 object-cover rounded-full border-2 border-brand-red" src="/img/user/profil.png" alt="" /></Link>
-                    </> : 
-                    <>
-                        <button onClick={()=> setOpenLogin(!openLogin)} className="px-6 py-1 rounded-md border-2 border-brand-red text-brand-red" >Login</button>
-                        <button  onClick={()=> setOpenRegister(!openRegister)} className="bg-brand-red text-white px-5 py-1 rounded-md border-2 border-brand-red" type="button">Register</button>
-                    </>}
-                </div> 
+                        <button onClick={() => setOpenLogin(!openLogin)} className='bg-white border-2 border-brand-red text-brand-red font-bold px-7 py-1 rounded-md'>Login</button>
+                        <button onClick={() => setOpenRegister(!openRegister)} className='bg-brand-red border-2 border-brand-red text-white px-7 py-1 rounded-md'>Register</button>
+                    </>
+                    )}
+                </div>
+
             </nav>
         
  
