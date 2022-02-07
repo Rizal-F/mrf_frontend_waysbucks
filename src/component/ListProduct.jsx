@@ -1,16 +1,17 @@
+import {Link} from 'react-router-dom'
 
 function ListProduct() {
     return(
         <div className="mx-32 my-5">
             <h2 className="text-brand-red text-2xl font-['Avenir-Black'] mb-5">Let's Order</h2>
             <div className="flex justify-between space-x-6"> 
-                <a href="/detail-product" className="bg-brand-pink w-1/4 rounded-lg text-brand-red">
+                <Link to="/detail-product" className="bg-brand-pink w-1/4 rounded-lg text-brand-red">
                     <img className="w-full" src="/img/landing_page/product1.png" alt="" />
                     <div className="p-3">
                         <p className="font-bold">Iced Coffe Palm Sugar</p>
                         <p>Rp. 27.000</p>
                     </div>
-                </a>    
+                </Link>    
                 <div className="bg-brand-pink w-1/4 rounded-lg text-brand-red">
                     <img className="w-full" src="/img/landing_page/product2.png" alt="" />
                     <div className="p-3">
