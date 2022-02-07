@@ -1,5 +1,5 @@
 
-
+// Array tbody
 const dataTable = [
     {
         no: '1',
@@ -37,39 +37,46 @@ const dataTable = [
 
 function TableTransaction() {
     return(
-        <div className="transactionWrapp md:w-9/12 md:m-auto md:mt-12">
-                <div>
-                    <table className="md:w-full text-center">
-                        <thead>
-                            <tr>
-                                <td className="px-2 border border-collapse">No</td>
-                                <td className="md:py-3 border border-collapse">Name</td>
-                                <td className="border border-collapse">Address</td>
-                                <td className="border border-collapse">Post Code</td>
-                                <td className="border border-collapse">Income</td>
-                                <td className="border border-collapse">Status</td>
-                                <td className="border border-collapse">Action</td>
-                            </tr>
-                        </thead>
-                        {dataTable.map((items) => (
-                            <tbody>
+        
+        <div>
+            <div className="font-bold font-['Avenir-Black'] text-brand-red text-3xl mt-14 mb-6 mx-32">
+                <h1>Income transaction</h1>
+            </div>
+            {/* Table */}
+            <div className="transactionWrapp md:w-9/12 md:m-auto md:mt-12">
+                    <div>
+                        <table className="md:w-full text-center">
+                            <thead>
                                 <tr>
-                                    <td className="border border-collapse">{items.no}</td>
-                                    <td className="md:py-1 border border-collapse">{items.name}</td>
-                                    <td className="border border-collapse">{items.address}</td>
-                                    <td className="border border-collapse">{items.postCode}</td>
-                                    <td className="border border-collapse">{items.income}</td>
-                                    <td className="border border-collapse">{items.status}</td>
-                                    <td className="border border-collapse">
-                                        <button className="md:m-1 bg-red-600 text-white md:px-3 rounded-md">Cancel</button>
-                                        <button className="md:m-1 bg-green-600 text-white md:px-3 rounded-md">Approve</button>
-                                    </td>
+                                    <td className="px-2 border border-collapse">No</td>
+                                    <td className="md:py-3 border border-collapse">Name</td>
+                                    <td className="border border-collapse">Address</td>
+                                    <td className="border border-collapse">Post Code</td>
+                                    <td className="border border-collapse">Income</td>
+                                    <td className="border border-collapse">Status</td>
+                                    <td className="border border-collapse">Action</td>
                                 </tr>
+                            </thead>
+                            {dataTable.map((items) => (
+                                <tbody>
+                                    <tr>
+                                        <td className="border border-collapse">{items.no}</td>
+                                        <td className="md:py-1 border border-collapse">{items.name}</td>
+                                        <td className="border border-collapse">{items.address}</td>
+                                        <td className="border border-collapse">{items.postCode}</td>
+                                        <td className="border border-collapse">{items.income}</td>
+                                        <td className="border border-collapse">{items.status}</td>
+                                        <td className="border border-collapse">
+                                            <button className="md:m-1 bg-red-600 text-white md:px-3 rounded-md">Cancel</button>
+                                            <button className="md:m-1 bg-green-600 text-white md:px-3 rounded-md">Approve</button>
+                                        </td>
+                                    </tr>
 
-                            </tbody>
-                        ))}
-                    </table>
-                </div>
+                                </tbody>
+                            ))}
+                        </table>
+                    </div>
+            </div>
         </div>
     )
 }

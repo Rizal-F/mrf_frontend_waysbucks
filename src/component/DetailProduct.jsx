@@ -3,7 +3,7 @@ function DetailProduct () {
         <div className="flex mx-32">
             <div className="w-2/5">
                 <img className="w-full"  src="/img/landing_page/product1.png" alt="" />
-                </div>
+            </div>
             <div className=" text-brand-red w-3/5 ml-10">
                 <h1 className="text-4xl font-bold font-['Avenir-Black']">Ice Coffee Palm Sugar</h1>
                 <p className="font-['Avenir-Book'] mt-5">Rp.27.000</p>

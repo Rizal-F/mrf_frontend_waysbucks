@@ -1,3 +1,4 @@
+// Dummy Transaction
 const Transactions = [
         {
             productName: "Ice Coffee Palm Sugar",
