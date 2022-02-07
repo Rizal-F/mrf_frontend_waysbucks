@@ -104,10 +104,12 @@ function Navbar(props) {
                                     <Menu.Item>
                                         <div className='flex mt-3 my-2'>
                                             <img className='h-8 mx-3 mt-1' src="img/dropdown/logout.png" alt="" />
+                                            <Link to="/">
                                             <div
-                                                className='bg-white block px-4 py-2 font-["Avenir-Black"] text-md text-gray-700 cursor-pointer' onClick={() => toggleLoggedIn()}>
-                                                Logout
+                                            className='bg-white block px-4 py-2 font-["Avenir-Black"] text-md text-gray-700 cursor-pointer' onClick={() => toggleLoggedIn()}>
+                                                  Logout
                                             </div>
+                                              </Link>
                                         </div>
                                     </Menu.Item>
                                         </Menu.Items>

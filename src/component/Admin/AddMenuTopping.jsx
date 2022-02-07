@@ -13,7 +13,7 @@ function AddMenuTopping() {
                         focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-red-900'>
                             <p className='ml-2 text-sm bg-red-50 opacity-100 font-normal'>Photo Product</p>
                             <input id="photo-upload" name="photo-upload" type="file" className="hidden place" />                    
-                            <img className='h-5 mr-2' src="/images/upload.png" alt="" />
+                            <img className='h-5 mr-2' src="/img/upload.png" alt="" />
                         </div>
                     </label>                
                     <button className="bg-brand-red text-white px-5 py-2 rounded-md text-center w-9/12 mt-7">Add Product</button>

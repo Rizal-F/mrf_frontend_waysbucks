@@ -43,7 +43,7 @@ function Profil() {
                     <div className=" py-6 mx-5">
                         <img className="mb-5 px-4" src="/img/user/logoSmall.png" alt="" />
                         <img className="mb-2 px-3" src="/img/user/barcode.png" alt="" />
-                        <button className="text-brand-blue text-xs bg-brand-blue-light w-full py-1 rounded-sm mr-3 mb-1">On The Wayt</button>
+                        <button className="text-brand-blue text-xs bg-brand-blue-light w-full py-1 rounded-sm mr-3 mb-1">On The Way</button>
                         <p className="text-brand-brown font-['Avenir-Black'] text-xs">Subtotal : 69.000</p>
                     </div>
                 </div>
